@@ -1,0 +1,85 @@
+🔗 Inheritance in Java 🚀
+📘 Definition:
+Inheritance ka matlab hota hai:
+Ek class (child) dusri class (parent) ke properties (fields) aur methods ko inherit kar sakti hai.
+
+Jaise beta baap ki property use karta hai 😄
+Reusability ka concept yahin se aata hai.
+
+👨‍👦 Example:
+class Parent {
+    void speak() {
+        System.out.println("Main Parent hoon");
+    }
+}
+
+class Child extends Parent {
+    void walk() {
+        System.out.println("Main Child hoon");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.speak();  // Inherited method
+        c.walk();   // Own method
+    }
+}
+✅ Output:
+
+Main Parent hoon
+Main Child hoon
+🧩 Key Points:
+Term	Description
+extends	Keyword used to inherit from a class
+Parent class	Also called Base / Super class
+Child class	Also called Derived / Sub class
+Reusability	Code likhne ki mehnat kam hoti hai
+🧃 Real Life Analogy:
+Soch:
+
+Class Vehicle – common features: speed, engine
+
+Class Car inherits from Vehicle, aur apna musicSystem add karta hai
+
+Toh car mein vehicle wale saare features by default aa jaate hain
+
+🧪 Practice Example:
+
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating...");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();   // Inherited
+        dog.bark();  // Own
+    }
+}
+🔄 Types of Inheritance in Java:
+Type	Supported in Java
+Single Inheritance ✅ (Yes)
+Multilevel ✅
+Hierarchical ✅
+Multiple Inheritance ❌ (via class — not allowed)
+Interface based Multiple Inheritance ✅
+⚠️ Note on Multiple Inheritance:
+Java class se multiple inheritance allow nahi karta to avoid confusion (diamond problem).
+But interface ke through hoti hai multiple inheritance.
+
+🔑 Bonus Concept: super Keyword
+super ka use hota hai parent class ke method ya constructor ko access karne ke liye.
+
+
+super.methodName();
+super(); // constructor call

@@ -1,0 +1,19 @@
+🔒 Encapsulation in Java
+
+📘 Definition:
+    Encapsulation means wrapping data (variables) and code (methods) together into a single unit (class) and restricting direct access to some of the object's components.
+
+    Matlab:
+        Variables ko private banate hain
+        Access karne ke liye getter aur setter methods banate hain
+
+🎯 Goal of Encapsulation:
+    Data ko secure karna (outside se direct access na ho)
+    Class ke through hi data read or modify ho
+    Logic ko control kar sakte ho (jaise value check karna setter mein)
+
+🧍‍♂️ Real Life Analogy:
+    Socho ek ATM machine:
+    Tum direct cash box ko touch nahi kar sakte (like private)
+    Tum sirf buttons (interface – get/set) ke through kaam kar sakte ho
+    Waise hi Java class mein private data hota hai, aur use access karne ke liye public methods use karte hain.

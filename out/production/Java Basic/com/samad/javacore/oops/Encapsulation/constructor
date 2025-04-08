@@ -1,0 +1,114 @@
+## 🏗️ **Constructor in Java**
+
+### 📘 Definition:
+> Constructor ek special method hota hai jo **object create hote hi call** hota hai — aur uska kaam hota hai **object ko initialize karna**.
+
+---
+
+## 🔑 Features of Constructor:
+| Point | Description |
+|-------|-------------|
+| 🔹 Name same as class name hota hai
+| 🔹 **Return type nahi hota** (na `void`, na koi aur)
+| 🔹 **Automatically call** hota hai object banate waqt
+| 🔹 Object ko **initial values dene** ke liye use hota hai
+
+---
+
+## 🧪 Example: Constructor Use
+
+```java
+public class Student {
+    String name;
+    int age;
+
+    // Constructor
+    public Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    public void show() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+```
+
+```java
+// Usage
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student("Aman", 21);
+        s1.show();  // Output: Name: Aman, Age: 21
+    }
+}
+```
+
+---
+
+## 👇 Types of Constructors:
+
+### 1. 🆓 **Default Constructor** (No-arg constructor)
+Java khud banata hai agar tu koi constructor nahi likhta.
+
+```java
+public Student() {
+    System.out.println("Default constructor called");
+}
+```
+
+### 2. 📦 **Parameterized Constructor**
+Jisme arguments pass karte ho:
+
+```java
+public Student(String name, int age) {
+    this.name = name;
+    this.age = age;
+}
+```
+
+---
+
+## 💡 Why use Constructor?
+- Object banate waqt hi values deni ho to
+- Repeated code avoid karne ke liye
+- Specific state mein object chahiye ho
+
+---
+
+## 🔄 Difference: Constructor vs Method
+
+| Constructor                  | Method                       |
+|-----------------------------|------------------------------|
+| Class name hota hai         | Koi bhi naam ho sakta hai    |
+| No return type              | Return type hota hai         |
+| Auto call hota hai          | Call manually karna padta hai |
+| Object initialization       | Object ke behavior ko define karta hai |
+
+---
+
+## 📌 Practice Idea:
+
+```java
+class Car {
+    String brand;
+    int year;
+
+    // Constructor
+    public Car(String brand, int year) {
+        this.brand = brand;
+        this.year = year;
+    }
+
+    public void showDetails() {
+        System.out.println("Brand: " + brand + ", Year: " + year);
+    }
+}
+```
+
+```java
+Car c1 = new Car("Honda", 2022);
+c1.showDetails();
+```
+
+---
