@@ -1,0 +1,95 @@
+----------------- Method -----------------------
+🔹 1. Method in Java
+📘 Definition:
+    Method = Reusable block of code that performs some task.
+
+        void sayHello() {
+            System.out.println("Hello, bhai!");
+        }
+🧠 Syntax:
+    returnType methodName(parameters) {
+        // logic
+    }
+
+    Example:
+    int add(int a, int b) {
+        return a + b;
+    }
+
+✅ Why use methods?
+    Code reuse
+    Modularity
+    Clean logic handling
+
+🔹 2. Method Overloading
+📘 Definition:
+    Same method name but different parameters = Overloading
+
+    int add(int a, int b)         // 2 parameters
+    int add(int a, int b, int c)  // 3 parameters
+    double add(double a, double b) // different type
+
+✅ Rules:
+    Method name same hona chahiye, but:
+    Number of parameters ya
+    Type of parameters different honi chahiye
+
+    🛑 Return type se overloading nahi hoti
+
+    📦 Example:
+    class Calculator {
+        int add(int a, int b) {
+            return a + b;
+        }
+
+        double add(double a, double b) {
+            return a + b;
+        }
+
+        int add(int a, int b, int c) {
+            return a + b + c;
+        }
+    }
+🔹 3. Method Signature
+📘 Definition:
+    Method Signature = Method Name + Parameter Types
+
+Example:
+    int add(int a, int b)     // Signature: add(int, int)
+    double add(double a, double b) // Signature: add(double, double)
+    Return type method signature ka part nahi hota
+
+    Signature se hi JVM decide karta hai kaunsa method call hoga (in overloading)
+
+🔹 4. Mutability
+📘 Definition:
+    Mutable = Change ho sakta hai
+    Immutable = Change nahi ho sakta
+
+🔧 In Java:
+    Type	Mutable?	Example
+    String	❌ No	Immutable
+    StringBuilder	✅ Yes	Mutable
+    Array	✅ Yes	Mutable
+
+✅ Example: Immutable String
+    String name = "Aman";
+    name.concat(" Singh");  // Won’t change name
+    System.out.println(name); // Output: Aman
+    But:
+
+    String name = "Aman";
+    name = name.concat(" Singh");
+    System.out.println(name); // Output: Aman Singh
+
+✅ Example: Mutable StringBuilder
+    StringBuilder sb = new StringBuilder("Aman");
+    sb.append(" Singh");
+    System.out.println(sb); // Output: Aman Singh
+
+🔁 Summary Table
+Concept	Summary
+    Method	Reusable block of logic
+    Overloading	Same method name, different parameters
+    Method Signature	Name + parameter types
+    Mutability	Can object be changed after creation?
