@@ -1,0 +1,48 @@
+🔁 What is com.samad.javacore.recursion in Java?
+    com.samad.javacore.recursion is a programming technique where a method calls itself to solve a smaller part of the problem until a base condition is met.
+
+✅ Important Points about com.samad.javacore.recursion:
+    Base Case is a must – Prevents infinite com.samad.javacore.recursion and stops the function.
+
+    Recursive Case – The part where the function calls itself.
+
+    Stack Memory – Each recursive call uses stack memory. Too many calls can lead to StackOverflowError.
+
+    Used for problems that can be broken into smaller, similar sub-problems (e.g., factorial, Fibonacci, tree traversal, etc.).
+
+    Should be optimized – If not written carefully, com.samad.javacore.recursion can be inefficient.
+
+📌 Syntax (General Pattern):
+        returnType methodName(parameters) {
+            if (base condition) {
+                return some value;
+            } else {
+                return methodName(modified parameters); // recursive call
+            }
+        }
+
+💡 Example: Factorial using com.samad.javacore.recursion
+        public class RecursionExample {
+
+            // Recursive method to calculate factorial
+            static int factorial(int n) {
+                if (n == 0 || n == 1) {
+                    return 1; // base case
+                } else {
+                    return n * factorial(n - 1); // recursive case
+                }
+            }
+
+            public static void main(String[] args) {
+                int number = 5;
+                int result = factorial(number);
+                System.out.println("Factorial of " + number + " is: " + result);
+            }
+        }
+
+Output:
+Factorial of 5 is: 120
+
+⚠️ When to Avoid com.samad.javacore.recursion:
+    If performance or memory is a concern (consider iteration instead).
+    Deep com.samad.javacore.recursion can lead to stack overflow.

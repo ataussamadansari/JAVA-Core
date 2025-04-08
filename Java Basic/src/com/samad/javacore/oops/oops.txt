@@ -1,0 +1,181 @@
+🧠 What is OOPs in Java?
+OOPs (Object-Oriented Programming) is a way of writing code that models real-world things as objects.
+Instead of just writing logic, you create classes and objects that hold both data and behavior.
+
+🔵 Class aur Object - Java ke Building Blocks
+🔸 Socho Class kya hoti hai?
+Class = Ek Blueprint / Design / Naksha hota hai.
+Isme bataya jata hai ki kisi object ke andar kya properties (variables) aur kya actions (com.samad.javacore.methods) honge.
+
+Jaise:
+
+Agar hum Car banate hain, toh:
+
+Properties: color, speed, brand
+
+Methods: drive(), brake(), horn()
+
+java
+Copy
+Edit
+class Car {
+    String color;
+    int speed;
+
+    void drive() {
+        System.out.println("Car is driving...");
+    }
+}
+Yeh sirf naksha hai — isse abhi koi car sadak pe nahi chalegi.
+
+🔸 Object kya hota hai?
+Object = Class ka real version / actual item hota hai jo memory mein banta hai aur use kiya ja sakta hai.
+
+
+Car myCar = new Car(); // yeh object ban gaya
+Ab is myCar object ke paas color, speed, aur drive() function available hai.
+
+
+myCar.color = "Red";
+myCar.speed = 100;
+myCar.drive();  // Output: Car is driving...
+🚗 Real-life Example:
+Class (Design)	Object (Asli cheez)
+MobilePhone (Class)	iPhone, Samsung (Objects)
+Animal (Class)	Dog, Cat, Lion (Objects)
+Car (Class)	BMW, Audi, Maruti (Objects)
+
+🧠 Memory ke point of view se:
+Car myCar = new Car();
+Iska matlab:
+
+new keyword memory mein ek naya object banata hai
+
+Car() = constructor call hota hai (default constructor agar koi nahi banaya)
+
+myCar ek reference variable hai jo us object ko point karta hai
+
+🧪 Ek Full Example (Hinglish Comments ke saath):
+java
+Copy
+Edit
+class Student {
+    String name;
+    int age;
+
+    // Method to show details
+    void showInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+public class com.samad.javacore.Main {
+    public static void main(String[] args) {
+        // Object banaya
+        Student s1 = new Student();
+
+        // Properties set ki
+        s1.name = "Rahul";
+        s1.age = 21;
+
+        // Method call kiya
+        s1.showInfo();
+    }
+}
+🖨 Output:
+Name: Rahul
+Age: 21
+
+
+🔁 Summary (Yaad karne ke liye):
+Term	Matlab
+class	Blueprint / Design / Template
+object	Class ka actual use hone wala version
+new	Object banane ke liye use hota hai
+. (dot)	Object ke variables/com.samad.javacore.methods access karne ke liye
+
+
+--------------------- OOPS ----------------------------
+---- 🔑 4 Pillars of OOPs in Java ----
+
+---> Encapsulation
+    -> Bundling of data & method into a single unit -> (class).
+    ---- OR ----
+    -> Data Protection
+       Wrapping data (variables) and com.samad.javacore.methods together in a single unit (class)
+       Data is hidden using private, and accessed using getters & setters
+
+       +-----------------------------------------------+
+            public class Student {
+                private String name;
+
+                public void setName(String n) {
+                    name = n;
+                }
+
+                public String getName() {
+                    return name;
+                }
+            }
+       +------------------------------------------------+
+
+---> Inheritance
+    --> Code Reusability
+        One class inherits properties of another class using extends
+
+        +--------------------------------------------+
+            class Animal {
+                void sound() {
+                    System.out.println("Animal makes sound");
+                }
+            }
+
+            class Dog extends Animal {
+                void bark() {
+                    System.out.println("Dog barks");
+                }
+            }
+        +--------------------------------------------+
+
+---> Polymorphism
+    --> One Name, Many Forms
+        Compile-time Polymorphism (Method Overloading):
+
+        +---------------------------------------------+
+            class MathUtils {
+                int add(int a, int b) { return a + b; }
+                double add(double a, double b) { return a + b; }
+            }
+
+            --- OR ---
+            class Animal {
+                void sound() {
+                    System.out.println("Animal sound");
+                }
+            }
+
+            class Cat extends Animal {
+                void sound() {
+                    System.out.println("Meow");
+                }
+            }
+        +---------------------------------------------+
+
+---> Abstraction
+    --> Hide Complexity
+        Show only essential details, hide internal logic
+
+        Done using abstract classes or interfaces
+
+        +-------------------------------------------------+
+            abstract class Vehicle {
+                abstract void drive();
+            }
+
+            class Car extends Vehicle {
+                void drive() {
+                    System.out.println("Driving a car");
+                }
+            }
+        +-------------------------------------------------+
