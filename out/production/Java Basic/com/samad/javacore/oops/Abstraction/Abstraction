@@ -1,0 +1,99 @@
+🎭 What is Abstraction?
+📘 Definition:
+Abstraction ka matlab hai:
+Sirf essential cheezein show karo, baaki details chhupa lo.
+
+Matlab:
+
+User ko kya kaam karna hai, woh dikhate ho
+
+Kaise ho raha hai, woh chhupa lete ho (implementation hidden)
+
+🧍‍♂️ Real Life Example:
+Soch — Car chalate waqt:
+
+Tumhe pata hota hai: steering ghumao, brake dabao
+
+But andar engine kaise kaam karta hai, woh abstract hai!
+
+🎯 Goal of Abstraction:
+User ko simple interface do
+
+Complex logic hide karo
+
+System ko secure aur clean rakho
+
+🛠️ Java mein Abstraction kaise hoti hai?
+Java provides 2 ways:
+Way	Use
+✅ abstract class	Partial abstraction (some methods implemented)
+✅ interface	Full abstraction (all methods abstract by default)
+🧪 Example 1: Using abstract class
+java
+Copy
+Edit
+abstract class Animal {
+    abstract void sound(); // abstract method
+
+    void sleep() {
+        System.out.println("Animal sleeps");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+java
+Copy
+Edit
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();  // Dog barks
+        a.sleep();  // Animal sleeps
+    }
+}
+✅ Output:
+nginx
+Copy
+Edit
+Dog barks  
+Animal sleeps
+🧪 Example 2: Using interface
+java
+Copy
+Edit
+interface Vehicle {
+    void start();     // public + abstract by default
+    void stop();
+}
+
+class Car implements Vehicle {
+    public void start() {
+        System.out.println("Car started");
+    }
+
+    public void stop() {
+        System.out.println("Car stopped");
+    }
+}
+java
+Copy
+Edit
+Vehicle v = new Car();
+v.start();
+v.stop();
+🔐 Why Use Abstraction?
+Benefit	Description
+Data hiding	User ko sirf important cheezein dikhai jati hain
+Code clarity	Clean interface, reusable design
+Security	Internal logic protected from misuse
+Loose coupling	Code change ka impact kam hota hai
+🧠 Summary Table:
+Concept	Abstract Class	Interface
+Partial abstraction	✅	❌ (100% abstraction by default)
+Can have constructor	✅	❌
+Multiple inheritance	❌ (single)	✅ (via interface)
+Method type	abstract + concrete	only abstract (Java 8+ allows default too)

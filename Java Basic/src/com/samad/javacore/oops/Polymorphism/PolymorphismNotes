@@ -1,0 +1,85 @@
+🔁 Polymorphism in Java
+“Poly” = many, “morph” = forms → Ek cheez ke multiple roop 🔥
+
+📘 Definition:
+Polymorphism ka matlab hai:
+Ek method ya object ka multiple forms mein behave karna — depending on context.
+
+Java mein 2 types hote hain:
+
+✌️ Types of Polymorphism:
+Type	Meaning	Also Called As
+1. Compile-time Polymorphism	Method call decide hota hai compile time pe	Method Overloading
+2. Runtime Polymorphism	Method call decide hota hai runtime pe	Method Overriding
+1️⃣ Method Overloading (Compile-time)
+👉 Same class me same method name with different parameters
+
+java
+Copy
+Edit
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+java
+Copy
+Edit
+Calculator calc = new Calculator();
+System.out.println(calc.add(5, 3));       // int version
+System.out.println(calc.add(2.5, 4.7));   // double version
+✅ Method name same, but signature (params) different
+
+2️⃣ Method Overriding (Runtime)
+👉 Parent-child mein same method signature
+👉 Runtime pe decide hota hai kiska method chalega
+
+java
+Copy
+Edit
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+java
+Copy
+Edit
+Animal a = new Dog();  // reference = Animal, object = Dog
+a.sound();  // Output: Dog barks
+✅ Runtime pe decide hua ki Dog ka method call hoga
+
+⚡ Real-Life Analogy:
+TV remote → press power button:
+
+TV on hoti hai
+
+Same remote AC ko bhi chala sakta hai
+➜ Same action, different results depending on object
+
+🧠 Key Differences:
+Overloading	Overriding
+Same class	Parent-child class
+Compile time	Runtime
+Return type can differ	Return type mostly same
+Static polymorphism	Dynamic polymorphism
+✅ Bonus: Why Polymorphism?
+Code readability ✔️
+
+Reusability ✔️
+
+Maintainability ✔️
+
+Easily extendable ✔️
+
