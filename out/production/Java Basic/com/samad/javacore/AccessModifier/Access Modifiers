@@ -1,0 +1,94 @@
+🔐 Access Modifiers in Java
+Ye decide karte hain kis level tak koi class, method ya variable accessible hai (i.e. visibility control)
+
+📦 4 Types of Access Modifiers:
+Modifier	Within Class	Within Package	Outside Package (Subclass)	Outside Package (Non-subclass)
+private	✅	❌	❌	❌
+default	✅	✅	❌	❌
+protected	✅	✅	✅	❌
+public	✅	✅	✅	✅
+🔍 Explanation (in Hinglish):
+1️⃣ private
+Sirf usi class ke andar accessible
+
+Sabse secure
+
+java
+Copy
+Edit
+private int pin = 1234;
+✅ Use in: sensitive data like passwords, balance, etc.
+
+2️⃣ (no modifier) → Default / Package-Private
+Same package ke classes use kar sakti hain
+
+java
+Copy
+Edit
+int speed = 60;  // default
+⚠️ Outside package = ❌ Not allowed
+
+3️⃣ protected
+Same package + outside package subclass
+
+Mostly inheritance mein kaam aata hai
+
+java
+Copy
+Edit
+protected void show() {
+    System.out.println("Protected method");
+}
+4️⃣ public
+Har jagah se access
+
+Fully open method or class
+
+java
+Copy
+Edit
+public void print() {
+    System.out.println("Accessible everywhere");
+}
+📦 Example with all 4:
+java
+Copy
+Edit
+public class Demo {
+    private int a = 10;
+    int b = 20;               // default
+    protected int c = 30;
+    public int d = 40;
+
+    public void show() {
+        System.out.println(a + " " + b + " " + c + " " + d);
+    }
+}
+java
+Copy
+Edit
+public class Test {
+    public static void main(String[] args) {
+        Demo obj = new Demo();
+        // System.out.println(obj.a); ❌ private
+        System.out.println(obj.b);     // ✅ default
+        System.out.println(obj.c);     // ✅ protected
+        System.out.println(obj.d);     // ✅ public
+    }
+}
+(Assuming Test is in same package)
+
+✅ Best Practices:
+Scenario	Use this modifier
+Sensitive info (password, pin)	private
+API methods, global use	public
+Extendable but safe methods	protected
+Internal helper classes	default (no modifier)
+🎯 Interview Tip:
+Q: What's the difference between private and protected?
+🧠 A:
+
+private = only within class
+
+protected = within package + subclass (even in different package)
+
